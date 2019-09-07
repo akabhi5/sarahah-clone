@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>sarahah clone</title>
+</head>
+<body>
+  <a href="{% url 'index' %}">Home</a>
+
+  {% if user.is_authenticated %}
+    <a href="logout">logout</a>
+    <p>Hello {{ user.username }}</p>
+  {% else %}
+    <p>Welcome</p>
+  {% endif %}
+
+  {% block content %}
+  {% endblock content %}
+
+</body>
+</html>

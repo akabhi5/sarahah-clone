@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <form action="{% url 'message' %}" method="post">
+    {% csrf_token %}
+    Type your message for : {{ request.path|slice:"1:-1" }}
+    <input type="text" name="profileid" value="{{ request.path|slice:"1:-1" }}">
+    <input type="text" name="message" value="">
+    <input type="submit" name="submit" value="submit">
+  </form>
+{% endblock content %}

@@ -1,0 +1,27 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>this is homepage</h1>
+
+  <h2>Sign Up</h2>
+
+  <form action="{% url 'signup' %}" method="post">
+    {% csrf_token %}
+    Username: <input type="text" name="Username" value=""><br>
+    Password: <input type="text" name="Password" value=""><br>
+    Email: <input type="text" name="Email" value=""><br>
+    <input type="submit" name="Submit" value="Submit">
+  </form>
+
+<hr>
+
+  <h2>Login</h2>
+
+  <form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    Username: <input type="text" name="Username" value=""><br>
+    Password: <input type="text" name="Password" value=""><br>
+    <input type="submit" name="Submit" value="Submit">
+  </form>
+{% endblock content %}

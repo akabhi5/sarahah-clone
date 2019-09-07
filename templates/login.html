@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+    <h3>Welcome {{ user.username }}</h3>
+
+    {% for message in data %}
+      <p>{{ message.message }}</p>
+    {% endfor %}
+
+  {% else %}
+    <p>wrong info</p>
+  {% endif %}
+{% endblock content %}
